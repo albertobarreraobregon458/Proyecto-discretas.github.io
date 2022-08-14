@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="main.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand " href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active col-3">
+                    <a class="nav-link " href="main.html">Aprender <span class="sr-only">(current)</span></a>
+                </li>
+             
+
+            </ul>
+        </div>
+    </nav>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4" style="text-align: center;"><strong>Realizar Tablas de Verdad</strong></h1>
+            <p class="lead text-justify">
+               
+            </p>
+
+        </div>
+    </div>
+    <div class="container">
+        <div class="float-left col-6">
+            <table class="table text-center border">
+                <thead class="thead-dark">
+                    <tr>
+                        <th colspan="3">CONJUNCION</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="alert-success">
+                        <td class="col-2">q</td>
+                        <td class="col-2">s</td>
+                        <td class="col-2">q ^ s</td>
+                    </tr>
+                    <tr id="kl">
+                        <td>V</td>
+                        <td>V</td>
+                        <td>
+                            <select id="conj1" class="form-control" >
+                                <option selected disabled="">Seleccione</option>
+                                <option value="V" id="conjv">V</option>
+                                <option value="F" id="conjf" >F</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr id="kl">
+                        <td>V</td>
+                        <td>F</td>
+                        <td> 
+                            <select id="conj2" class="form-control">
+                                <option selected disabled="">Seleccione</option>
+                                <option value="V" id="conjv2">V</option>
+                                <option value="F" id="conjf2">F</option>
+                                </select>
+                        </td>
+                    </tr>
+                    <tr id="kl">
+                        <td>F</td>
+                        <td>V</td>
+                        <td>
+                            <select id="conj3" class="form-control">
+                                <option selected disabled="">Seleccione</option>
+                                <option value="V" id="conjv3">V</option>
+                                <option value="F" id="conjf3">F</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr id="kl">
+                        <td>F</td>
+                        <td>F</td>
+                        <td> 
+                            <select id="conj4" class="form-control">
+                                <option selected disabled="">Seleccione</option>
+                                <option value="V" id="conjv4">V</option>
+                                <option value="F" id="conjf4">F</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="background-color: #272D39 ;">
+                            <button class="btn btn-success" onclick="conj()">Calcular</button>
+                            <button class="btn btn-info" onclick="limpii()">Limpiar</button>
+                            
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+          
+            <p>
+                <h5 id="preb" style="text-align: center">Preguntas Correctas:</h5>
+                <h5 id="prem" style="text-align: center">Preguntas Incorrectas:</h5>
+                <h5 id="not1" style="text-align: center">Nota:</h5>
+                
+            </p>
+        </div>
+        <div class="float-left col-6">
+            <table class="table text-center border">
+                <thead class="thead-dark">
+                    <tr>
+                        <th colspan="3">Disyuncion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="alert-success">
+                        <td class="col-2">q</td>
+                        <td class="col-2">s</td>
+                        <td class="col-2">q v s</td>
+                    </tr>
+                    <tr id="kl">
+                        <td>V</td>
+                        <td>V</td>
+                        <td>
+                            <select id="disyu1" class="form-control">
+                                <option selected disabled="">Seleccione</option>
+                                <option value="V">V</option>
+                                <option value="F">F</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr id="kl">
+                        <td>V</td>
+                        <td>F</td>
+                        <td> 
+                            <select id="disyu2" class="form-control">
+                                <option selected disabled="">Seleccione</option>
+                                <option value="V">V</option>
+                                <option value="F">F</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr id="kl">
+                        <td>F</td>
+                        <td>V</td>
+                        <td>
+                            <select id="disyu3" class="form-control">
+                                <option selected disabled="">Seleccione</option>
+                                <option value="V">V</option>
+                                <option value="F">F</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr id="kl">
+                        <td>F</td>
+                        <td>F</td>
+                        <td> 
+                            <select id="disyu4" class="form-control">
+                                <option selected disabled="">Seleccione</option>
+                                <option value="V">V</option>
+                                <option value="F">F</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="background-color: #272D39 ;">
+                            <button class="btn btn-success" onclick="disyu()">Calcular</button>
+                            <button class="btn btn-info" onclick="limpidis()">Limpiar</button>
+                            
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+          
+            <p>
+                <h5 id="preb2" style="text-align: center">Preguntas Correctas:</h5>
+                <h5 id="prem2" style="text-align: center">Preguntas Incorrectas:</h5>
+                <h5 id="not2" style="text-align: center">Nota:</h5>
+                
+            </p>
+        </div>
+        <div class="float-left col-6">
+            <table class="table text-center border">
+                <thead class="thead-dark">
+                    <tr>
+                        <th colspan="3">BICONDICIONAL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="alert-success">
+                        <td class="col-2">q</td>
+                        <td class="col-2">s</td>
+                        <td class="col-2">q <-> s</td>
+                    </tr>
+                    <tr id="kl">
+                        <td>V</td>
+                        <td>V</td>
+                        <td>
+                            <select id="bicon1" class="form-control">
+                                <option selected disabled="">Seleccione</option>
+                                <option value="V">V</option>
+                                <option value="F">F</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr id="kl">
+                        <td>V</td>
+                        <td>F</td>
+                        <td> 
+                            <select id="bicon2" class="form-control">
+                                <option selected disabled="">Seleccione</option>
+                                <option value="V">V</option>
+                                <option value="F">F</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr id="kl">
+                        <td>F</td>
+                        <td>V</td>
+                        <td>
+                            <select id="bicon3" class="form-control">
+                                <option selected disabled="">Seleccione</option>
+                                <option value="V">V</option>
+                                <option value="F">F</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr id="kl">
+                        <td>F</td>
+                        <td>F</td>
+                        <td> 
+                            <select id="bicon4" class="form-control">
+                                <option selected disabled="">Seleccione</option>
+                                <option value="V">V</option>
+                                <option value="F">F</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="background-color: #272D39 ;">
+                            <button class="btn btn-success" onclick="bicond()">Calcular</button>
+                            <button class="btn btn-info" onclick="limpibicond()">Limpiar</button>
+                            
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+          
+            <p>
+                <h5 id="preb3" style="text-align: center">Preguntas Correctas:</h5>
+                <h5 id="prem3" style="text-align: center">Preguntas Incorrectas:</h5>
+                <h5 id="not3" style="text-align: center">Nota:</h5>
+                
+            </p>
+        </div>
+        <div class="float-left col-6">
+            <table class="table text-center border">
+                <thead class="thead-dark">
+                    <tr>
+                        <th colspan="3">CONDICIONAL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="alert-success">
+                        <td class="col-2">q</td>
+                        <td class="col-2">s</td>
+                        <td class="col-2">q -> s</td>
+                    </tr>
+                    <tr id="kl">
+                        <td>V</td>
+                        <td>V</td>
+                        <td>
+                            <select id="cond1" class="form-control">
+                                <option selected disabled="">Seleccione</option>
+                                <option value="V">V</option>
+                                <option value="F">F</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr id="kl">
+                        <td>V</td>
+                        <td>F</td>
+                        <td> 
+                            <select id="cond2" class="form-control">
+                                <option selected disabled="">Seleccione</option>
+                                <option value="V">V</option>
+                                <option value="F">F</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr id="kl">
+                        <td>F</td>
+                        <td>V</td>
+                        <td>
+                            <select id="cond3" class="form-control">
+                                <option selected disabled="">Seleccione</option>
+                                <option value="V">V</option>
+                                <option value="F">F</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr id="kl">
+                        <td>F</td>
+                        <td>F</td>
+                        <td> 
+                            <select id="cond4" class="form-control">
+                                <option selected disabled="">Seleccione</option>
+                                <option value="V">V</option>
+                                <option value="F">F</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="background-color: #272D39 ;">
+                            <button class="btn btn-success" onclick="condi()">Calcular</button>
+                            <button class="btn btn-info" onclick="limpicond()">Limpiar</button>
+                            
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+          
+            <p>
+                <h5 id="preb4" style="text-align: center">Preguntas Correctas:</h5>
+                <h5 id="prem4" style="text-align: center">Preguntas Incorrectas:</h5>
+                <h5 id="not4" style="text-align: center">Nota:</h5>
+                
+            </p>
+        </div>
+
+    </div>
+    <script src="tabl.js"></script>
+</body>
+</html>

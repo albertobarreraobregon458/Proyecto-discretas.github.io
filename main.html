@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand " href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active col-3">
+              <a class="nav-link " href="tol.html">Ejercicio <span class="sr-only">(current)</span></a>
+            </li>            
+          </ul>
+        </div>
+      </nav>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4" style="text-align: center;"><strong>Tablas de Verdad</strong></h1>
+            <p class="lead text-justify">
+                Las tablas de verdad es una estrategia de la lógica simple que permite establecer la validez de varias 
+                propuestas en cuanto a cualquier situación, es decir, determina las condiciones necesarias para que sea 
+                verdadero un enunciado propuesto, permitiendo clasificarlos en tautológicos (resultan verdaderos durante 
+                cualquier situación) contradictorias (son enunciados falsos en la mayoría de los casos) o contingentes 
+                (enunciados que no pueden será tantos verdaderos como falsos no existen tendencia a un solo sentido).
+            </p>
+           
+        </div>
+    </div>
+    <div class="container">
+        <div class="float-left col-6">
+            <table class="table text-center border">
+                <thead class="thead-dark">
+                    <tr>
+                        <th colspan="3">CONJUNCION</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="alert-success">
+                        <td>p</td>
+                        <td>q</td>
+                        <td>p ^ q</td>
+                    </tr>
+                    <tr id="kl">
+                        <td>
+                            <select id="conjuncion1" class="form-control">
+                                <option selected disabled="">Seleccione</option>
+                                <option value="V">V</option>
+                                <option value="F">F</option>
+                            </select>
+                        </td>
+                        <td id="td1">
+                            <select id="conjuncion2" class="form-control">
+                                <option selected disabled="">Seleccione</option>
+                                <option value="V">V</option>
+                                <option value="F">F</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="text" name="res" id="res" class="form-control text-center" readonly
+                                placeholder="Resultado">
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <button class="btn btn-success" onclick="conjuncion()">Calcular</button>
+                            <button class="btn btn-info" onclick="limpiar()">Limpiar</button>
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="float-left col-6">
+            <table class="table text-center border">
+                <thead class="thead-dark">
+                    <tr>
+                        <th colspan="3">DISYUNCION</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="alert-success">
+                        <td>p</td>
+                        <td>q</td>
+                        <td>p v q</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select id="disyuncion1" class="form-control">
+                                <option selected disabled="">Seleccione</option>
+                                <option value="V">V</option>
+                                <option value="F">F</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select id="disyuncion2" class="form-control">
+                                <option selected disabled="">Seleccione</option>
+                                <option value="V">V</option>
+                                <option value="F">F</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="text" name="resdisy" id="resdisy" class="form-control text-center" readonly
+                                placeholder="Resultado">
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <button class="btn btn-success" onclick="disyuncion()">Calcular</button>
+                            <button class="btn btn-info" onclick="limpiardis()">Limpiar</button>
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="float-left col-6">
+            <table class="table text-center border">
+                <thead class="thead-dark">
+                    <tr>
+                        <th colspan="3">CONDICIONAL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="alert-success">
+                        <td>p</td>
+                        <td>q</td>
+                        <td>p -> q</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select id="condicional1" class="form-control">
+                                <option selected disabled="">Seleccione</option>
+                                <option value="V">V</option>
+                                <option value="F">F</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select id="condicional2" class="form-control">
+                                <option selected disabled="">Seleccione</option>
+                                <option value="V">V</option>
+                                <option value="F">F</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="text" name="rescond" id="rescond" class="form-control text-center" readonly
+                                placeholder="Resultado">
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <button class="btn btn-success" onclick="condicional()">Calcular</button>
+                            <button class="btn btn-info" onclick="limpiarcond()">Limpiar</button>
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="float-left col-6">
+            <table class="table text-center border">
+                <thead class="thead-dark">
+                    <tr>
+                        <th colspan="3">BICONDICIONAL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="alert-success">
+                        <td>p</td>
+                        <td>q</td>
+                        <td>p <-> q</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select id="bicondicional1" class="form-control">
+                                <option selected disabled="">Seleccione</option>
+                                <option value="V">V</option>
+                                <option value="F">F</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select id="bicondicional2" class="form-control">
+                                <option selected disabled="">Seleccione</option>
+                                <option value="V">V</option>
+                                <option value="F">F</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="text" name="resbicond" id="resbicond" class="form-control text-center" readonly
+                                placeholder="Resultado">
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <button class="btn btn-success" onclick="bicondicional()">Calcular</button>
+                            <button class="btn btn-info" onclick="limpiarbicond()">Limpiar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="float-left col-6">
+            <table class="table text-center border">
+                <thead class="thead-dark">
+                    <tr>
+                        <th colspan="3">NEGACION</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="alert-success">
+                        <td>p</td>
+                        
+                        <td>-p</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select id="negacion1" class="form-control">
+                                <option selected disabled="">Seleccione</option>
+                                <option value="V">V</option>
+                                <option value="F">F</option>
+                            </select>
+                        </td>
+                    
+                        <td>
+                            <input type="text" name="resneg" id="resneg" class="form-control text-center" readonly
+                                placeholder="Resultado">
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <button class="btn btn-success" onclick="negacion()">Calcular</button>
+                            <button class="btn btn-info" onclick="limpiarneg()">Limpiar</button>
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+
+
+
+
+
+    <script src="main.js"></script>
+</body>
+
+</html>

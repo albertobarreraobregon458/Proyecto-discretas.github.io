@@ -1,0 +1,4 @@
+.form-control:hover{
+    border:3px solid #8EE6EE  ;
+    transition: .3s;
+}
